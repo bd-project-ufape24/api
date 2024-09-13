@@ -1,17 +1,17 @@
-import sqlite3 from "sqlite3";
-import { open } from "sqlite";
-import { sqls } from "./queries/createTableQuery";
+import sqlite3 from 'sqlite3';
+import { open } from 'sqlite';
+import fs from 'fs';
+import path from 'path';
 
-export const createTables = async () => {
-	const db = await open({
-		filename: "./src/database/data.db",
-		driver: sqlite3.Database,
-	});
+export const criarTabelas = async () => {
+    const db = await open({
+        filename: './src/database/data.db',
+        driver: sqlite3.Database
+    });
 
-	for (const sql of sqls) {
-		await db.exec(sql);
-	}
+    const sqlFilePath = path.join(__dirname, 'schema.sql');
+    const sql = fs.readFileSync(sqlFilePath, 'utf-8');
 
-	console.log("Tables created or already exist.");
-	await db.close();
+    await db.exec(sql);
+    await db.close();
 };
