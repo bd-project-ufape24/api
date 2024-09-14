@@ -15,7 +15,7 @@ JOIN
 JOIN 
     Categoria c ON p.categoriaID = c.ID
 WHERE 
-    c.nome = 'eletrodomésticos'
+    c.nome = 'Eletrodomésticos'
 GROUP BY 
     a.ID
 HAVING 
