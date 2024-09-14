@@ -3,7 +3,7 @@ import { open } from 'sqlite';
 import fs from 'fs';
 import path from 'path';
 
-export const criarTabelas = async () => {
+export const createTables = async () => {
     const db = await open({
         filename: './src/database/data.db',
         driver: sqlite3.Database

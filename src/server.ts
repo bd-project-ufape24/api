@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import routes from './http/routes';
-import { criarTabelas } from './database/tables';
+import { createTables } from './database/tables';
 import bodyParser from 'body-parser';
 
 const app = express();
@@ -11,7 +11,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(routes);
 
-criarTabelas()
+createTables()
     .then(() => {
         app.listen(port);
         console.log('Criação de tabelas finalizada ✅');
