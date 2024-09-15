@@ -4,7 +4,7 @@ import { executeSQL } from '../database/execute-sql';
 
 const routes = Router();
 
-routes.get('/questao1', async (req, res) => {
+routes.get('/question1', async (req, res) => {
     try {
         const sqlFilePath = path.join(__dirname, '../database/queries/1.sql');
         const result = await executeSQL(sqlFilePath);
@@ -15,7 +15,7 @@ routes.get('/questao1', async (req, res) => {
     }
 });
 
-routes.get('/questao2', async (req, res) => {
+routes.get('/question2', async (req, res) => {
     try {
         const sqlFilePath = path.join(__dirname, '../database/queries/2.sql');
         const result = await executeSQL(sqlFilePath);
@@ -26,7 +26,7 @@ routes.get('/questao2', async (req, res) => {
     }
 });
 
-routes.get('/questao3', async (req, res) => {
+routes.get('/question3', async (req, res) => {
     try {
         const sqlFilePath = path.join(__dirname, '../database/queries/3.sql');
         const result = await executeSQL(sqlFilePath);
@@ -37,7 +37,7 @@ routes.get('/questao3', async (req, res) => {
     }
 });
 
-routes.get('/questao4', async (req, res) => {
+routes.get('/question4', async (req, res) => {
     try {
         const sqlFilePath = path.join(__dirname, '../database/queries/4.sql');
         const result = await executeSQL(sqlFilePath);
@@ -48,7 +48,7 @@ routes.get('/questao4', async (req, res) => {
     }
 });
 
-routes.get('/questao5', async (req, res) => {
+routes.get('/question5', async (req, res) => {
     try {
         const sqlFilePath = path.join(__dirname, '../database/queries/5.sql');
         const result = await executeSQL(sqlFilePath);
@@ -59,7 +59,7 @@ routes.get('/questao5', async (req, res) => {
     }
 });
 
-routes.get('/questao6', async (req, res) => {
+routes.get('/question6', async (req, res) => {
     try {
         const sqlFilePath = path.join(__dirname, '../database/queries/6.sql');
         const result = await executeSQL(sqlFilePath);
@@ -70,7 +70,7 @@ routes.get('/questao6', async (req, res) => {
     }
 });
 
-routes.get('/questao7', async (req, res) => {
+routes.get('/question7', async (req, res) => {
     try {
         const sqlFilePath = path.join(__dirname, '../database/queries/7.sql');
         const result = await executeSQL(sqlFilePath);
@@ -81,7 +81,7 @@ routes.get('/questao7', async (req, res) => {
     }
 });
 
-routes.get('/questao8', async (req, res) => {
+routes.get('/question8', async (req, res) => {
     try {
         const sqlFilePath = path.join(__dirname, '../database/queries/8.sql');
         const result = await executeSQL(sqlFilePath);
@@ -92,7 +92,7 @@ routes.get('/questao8', async (req, res) => {
     }
 });
 
-routes.get('/questao9', async (req, res) => {
+routes.get('/question9', async (req, res) => {
     try {
         const sqlFilePath = path.join(__dirname, '../database/queries/9.sql');
         const result = await executeSQL(sqlFilePath);
@@ -103,7 +103,7 @@ routes.get('/questao9', async (req, res) => {
     }
 });
 
-routes.get('/questao10', async (req, res) => {
+routes.get('/question10', async (req, res) => {
     try {
         const sqlFilePath = path.join(__dirname, '../database/queries/10.sql');
         const result = await executeSQL(sqlFilePath);
