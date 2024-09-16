@@ -1,6 +1,6 @@
 WITH PedidosPresenciaisDeClientesAmericanos AS (
   SELECT
-    p.ID as produtoID
+    p.ID as pedidoID
   FROM
     Pedido p
   JOIN
@@ -17,6 +17,6 @@ SELECT
 FROM 
 	PedidosPresenciaisDeClientesAmericanos ppeua
 JOIN 
-	ProdutoPedido pp on ppeua.produtoID = pp.produtoID
+	ProdutoPedido pp on ppeua.pedidoID = pp.pedidoID
 WHERE
 	(pp.quantidade * pp.precoVenda) > 600

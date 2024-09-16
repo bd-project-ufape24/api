@@ -11,13 +11,20 @@ export const runInserts = async () => {
 
     const insertsPath = path.join(__dirname, '../database/queries/inserts');
 
-    let i = 1;
-    let filePath = path.join(insertsPath, `${i}.sql`);
+    const files = fs.readdirSync(insertsPath);
 
-    while (fs.existsSync(filePath)) {
+    const sqlFiles = files
+        .filter((file) => file.endsWith('.sql'))
+        .sort((a, b) => {
+            const numA = parseInt(path.basename(a, '.sql'), 10);
+            const numB = parseInt(path.basename(b, '.sql'), 10);
+            return isNaN(numA) || isNaN(numB) ? 0 : numA - numB;
+        });
+
+    for (const file of sqlFiles) {
+        const filePath = path.join(insertsPath, file);
         const sql = fs.readFileSync(filePath, 'utf-8');
         await db.exec(sql);
-        filePath = path.join(insertsPath, `${++i}.sql`);
     }
 
     console.log('Inserções finalizadas! ✅');
