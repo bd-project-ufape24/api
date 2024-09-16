@@ -9,8 +9,7 @@ export const executeSQL = async (filePath: string) => {
     });
 
     const sql = fs.readFileSync(filePath, 'utf-8');
-
-    let result = await db.all(sql);
+    const result = await db.all(sql);
 
     await db.close();
 

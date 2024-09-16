@@ -1,117 +1,25 @@
-import { Router } from 'express';
 import path from 'path';
+import { Router } from 'express';
 import { executeSQL } from '../database/execute-sql';
 
 const routes = Router();
+const queriesPath = path.join(__dirname, '../database/queries');
 
-routes.get('/question1', async (req, res) => {
-    try {
-        const sqlFilePath = path.join(__dirname, '../database/queries/1.sql');
-        const result = await executeSQL(sqlFilePath);
-        res.status(200).json(result);
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: 'Failed to execute SQL file' });
-    }
-});
+const createQuestionRoute = (number: number) => {
+    routes.get(`/question${number}`, async (req, res) => {
+        try {
+            const sqlFilePath = path.join(queriesPath, `${number}.sql`);
+            const result = await executeSQL(sqlFilePath);
+            res.status(200).json(result);
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({ error: 'Failed to execute SQL file' });
+        }
+    });
+};
 
-routes.get('/question2', async (req, res) => {
-    try {
-        const sqlFilePath = path.join(__dirname, '../database/queries/2.sql');
-        const result = await executeSQL(sqlFilePath);
-        res.status(200).json(result);
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: 'Failed to execute SQL file' });
-    }
-});
-
-routes.get('/question3', async (req, res) => {
-    try {
-        const sqlFilePath = path.join(__dirname, '../database/queries/3.sql');
-        const result = await executeSQL(sqlFilePath);
-        res.status(200).json(result);
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: 'Failed to execute SQL file' });
-    }
-});
-
-routes.get('/question4', async (req, res) => {
-    try {
-        const sqlFilePath = path.join(__dirname, '../database/queries/4.sql');
-        const result = await executeSQL(sqlFilePath);
-        res.status(200).json(result);
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: 'Failed to execute SQL file' });
-    }
-});
-
-routes.get('/question5', async (req, res) => {
-    try {
-        const sqlFilePath = path.join(__dirname, '../database/queries/5.sql');
-        const result = await executeSQL(sqlFilePath);
-        res.status(200).json(result);
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: 'Failed to execute SQL file' });
-    }
-});
-
-routes.get('/question6', async (req, res) => {
-    try {
-        const sqlFilePath = path.join(__dirname, '../database/queries/6.sql');
-        const result = await executeSQL(sqlFilePath);
-        res.status(200).json(result);
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: 'Failed to execute SQL file' });
-    }
-});
-
-routes.get('/question7', async (req, res) => {
-    try {
-        const sqlFilePath = path.join(__dirname, '../database/queries/7.sql');
-        const result = await executeSQL(sqlFilePath);
-        res.status(200).json(result);
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: 'Failed to execute SQL file' });
-    }
-});
-
-routes.get('/question8', async (req, res) => {
-    try {
-        const sqlFilePath = path.join(__dirname, '../database/queries/8.sql');
-        const result = await executeSQL(sqlFilePath);
-        res.status(200).json(result);
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: 'Failed to execute SQL file' });
-    }
-});
-
-routes.get('/question9', async (req, res) => {
-    try {
-        const sqlFilePath = path.join(__dirname, '../database/queries/9.sql');
-        const result = await executeSQL(sqlFilePath);
-        res.status(200).json(result);
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: 'Failed to execute SQL file' });
-    }
-});
-
-routes.get('/question10', async (req, res) => {
-    try {
-        const sqlFilePath = path.join(__dirname, '../database/queries/10.sql');
-        const result = await executeSQL(sqlFilePath);
-        res.status(200).json(result);
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: 'Failed to execute SQL file' });
-    }
-});
+for (let i = 1; i <= 10; i++) {
+    createQuestionRoute(i);
+}
 
 export default routes;

@@ -8,15 +8,17 @@ FROM
 WHERE 
     c.pais = 'Estados Unidos'
     AND (
-        SELECT COUNT(*) 
+        SELECT COUNT(*) as totalPedidos
         FROM Pedido p 
         WHERE (p.clienteID = c.ID 
         	AND (
         	    SELECT SUM(pp.precoVenda * pp.quantidade) 
         	    FROM ProdutoPedido pp 
         	    WHERE pp.pedidoID = p.ID
-        	) > 10000
-    ) > 20)
+        	) > 10000)
+      	GROUP BY p.clienteID
+      	HAVING totalPedidos > 20
+    )
     AND c.ID NOT IN (
         SELECT DISTINCT pe.clienteID 
         FROM Pedido pe
