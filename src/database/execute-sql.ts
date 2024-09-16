@@ -9,7 +9,6 @@ export const executeSQL = async (filePath: string) => {
     });
 
     const sql = fs.readFileSync(filePath, 'utf-8');
-    console.log(sql)
 
     let result = await db.all(sql);
 
