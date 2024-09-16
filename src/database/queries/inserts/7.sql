@@ -2,7 +2,7 @@
 INSERT INTO Fornecedor (ID, nome, pais, estado, cidade, rua, numero, complemento, tipo, documento)
 VALUES (5, 'Tim Roth', 'Brasil', 'SP', 'São Paulo', 'Rua Exemplo', 123, 'Apto 101', 'Fornecedor', '123456789');
 
-INSERT INTO Produto (ID, dataGarantia, status, precoVendaMin, precoTabela, fornecedorID, categoriaID)
+INSERT OR IGNORE INTO Produto (ID, dataGarantia, status, precoVendaMin, precoTabela, fornecedorID, categoriaID)
 VALUES 
   (9937, '2025-12-31', 'disponível', 500.00, 1500.00, 5, 3),
   (9938, '2025-05-20', 'disponível', 1000.00, 2000.00, 5, 3);
