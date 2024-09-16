@@ -25,51 +25,52 @@ VALUES
 (1, 'Cliente A', 'Estados Unidos', 'California', 'Los Angeles', 'Rua ABC', 123, 'Apto 101', 50000.00, '2020-01-01'),
 (2, 'Cliente B', 'Estados Unidos', 'New York', 'New York', 'Rua XYZ', 456, 'Bloco A', 40000.00, '2019-05-10'),
 (3, 'Cliente C', 'Estados Unidos', 'Texas', 'Houston', 'Avenida 123', 789, 'Apto 100', 10000.00, '2021-07-15'),
-(4, 'Cliente D', 'Estados Unidos', 'New York', 'New York', 'Rua ZYX', 654, 'Bloco B', 4000.00, '2019-05-10');
+(4, 'Cliente D', 'Estados Unidos', 'New York', 'New York', 'Rua ZYX', 654, 'Bloco B', 4000.00, '2019-05-10'),
+(5, 'Cliente Brasileiro', 'Brasil', 'São Paulo', 'São Paulo', 'Rua 123', 789, 'Apto 100', 10000.00, '2021-07-15');
 
 INSERT OR IGNORE INTO Pedido (ID, modoEncomenda, status, dataPedido, dataEntrega, clienteID)
 VALUES 
-(1, 'online', 'completo', '2023-01-15', '2023-01-20', 1),
-(2, 'loja', 'completo', '2023-02-10', '2023-02-15', 2),
-(3, 'online', 'completo', '2023-03-12', '2023-03-18', 3),
-(4, 'loja', 'completo', '2023-04-05', '2023-04-10', 4);
+(1, 'Online', 'Finalizado', '2023-01-15', '2023-01-20', 1),
+(2, 'Presencial', 'Finalizado', '2023-02-10', '2023-02-15', 2),
+(3, 'Online', 'Finalizado', '2023-03-12', '2023-03-18', 3),
+(4, 'Presencial', 'Finalizado', '2023-04-05', '2023-04-10', 4),
+(5, 'Online', 'Finalizado', '2023-06-05', '2023-06-10', 5);
 
 INSERT OR IGNORE INTO ProdutoPedido (produtoID, pedidoID, quantidade, precoVenda)
 VALUES 
 (3, 1, 2, 10000.00), -- Total = 20.000 (Cliente 1)
 (4, 2, 2, 6000.00),  -- Total = 12.000 (Cliente 2) (Smarthphone)
 (3, 3, 1, 10000.00), -- Total = 10.000 (Cliente 3)
-(4, 4, 3, 6000.00);  -- Total = 18.000 (Cliente 4) (Smarthphone)
+(4, 4, 3, 6000.00),  -- Total = 18.000 (Cliente 4) (Smarthphone)
+(3, 5, 2, 10000.00);  -- Total = 20.000 (Cliente 5)
 
 -- Pedidos do cliente 1
 INSERT OR IGNORE INTO Pedido (ID, modoEncomenda, status, dataPedido, dataEntrega, clienteID)
-VALUES 
-(5, 'online', 'completo', '2023-01-16', '2023-01-21', 1),
-(6, 'loja', 'completo', '2023-01-20', '2023-01-25', 1),
-(7, 'online', 'completo', '2023-02-01', '2023-02-06', 1),
-(8, 'loja', 'completo', '2023-02-10', '2023-02-15', 1),
-(9, 'online', 'completo', '2023-03-01', '2023-03-05', 1),
-(10, 'loja', 'completo', '2023-03-15', '2023-03-20', 1),
-(11, 'online', 'completo', '2023-04-01', '2023-04-07', 1),
-(12, 'loja', 'completo', '2023-04-10', '2023-04-15', 1),
-(13, 'online', 'completo', '2023-05-01', '2023-05-07', 1),
-(14, 'loja', 'completo', '2023-05-15', '2023-05-20', 1),
-(15, 'online', 'completo', '2023-06-01', '2023-06-07', 1),
-(16, 'loja', 'completo', '2023-06-10', '2023-06-15', 1),
-(17, 'online', 'completo', '2023-07-01', '2023-07-07', 1),
-(18, 'loja', 'completo', '2023-07-10', '2023-07-15', 1),
-(19, 'online', 'completo', '2023-08-01', '2023-08-07', 1),
-(20, 'loja', 'completo', '2023-08-10', '2023-08-15', 1),
-(21, 'online', 'completo', '2023-09-01', '2023-09-07', 1),
-(22, 'loja', 'completo', '2023-09-10', '2023-09-15', 1),
-(23, 'online', 'completo', '2023-10-01', '2023-10-07', 1),
-(24, 'loja', 'completo', '2023-10-10', '2023-10-15', 1),
-(25, 'online', 'completo', '2023-11-01', '2023-11-07', 1);
+VALUES
+(6, 'Presencial', 'Finalizado', '2023-01-20', '2023-01-25', 1),
+(7, 'Online', 'Finalizado', '2023-02-01', '2023-02-06', 1),
+(8, 'Presencial', 'Finalizado', '2023-02-10', '2023-02-15', 1),
+(9, 'Online', 'Finalizado', '2023-03-01', '2023-03-05', 1),
+(10, 'Presencial', 'Finalizado', '2023-03-15', '2023-03-20', 1),
+(11, 'Online', 'Finalizado', '2023-04-01', '2023-04-07', 1),
+(12, 'Presencial', 'Finalizado', '2023-04-10', '2023-04-15', 1),
+(13, 'Online', 'Finalizado', '2023-05-01', '2023-05-07', 1),
+(14, 'Presencial', 'Finalizado', '2023-05-15', '2023-05-20', 1),
+(15, 'Online', 'Finalizado', '2023-06-01', '2023-06-07', 1),
+(16, 'Presencial', 'Finalizado', '2023-06-10', '2023-06-15', 1),
+(17, 'Online', 'Finalizado', '2023-07-01', '2023-07-07', 1),
+(18, 'Presencial', 'Finalizado', '2023-07-10', '2023-07-15', 1),
+(19, 'Online', 'Finalizado', '2023-08-01', '2023-08-07', 1),
+(20, 'Presencial', 'Finalizado', '2023-08-10', '2023-08-15', 1),
+(21, 'Online', 'Finalizado', '2023-09-01', '2023-09-07', 1),
+(22, 'Presencial', 'Finalizado', '2023-09-10', '2023-09-15', 1),
+(23, 'Online', 'Finalizado', '2023-10-01', '2023-10-07', 1),
+(24, 'Presencial', 'Finalizado', '2023-10-10', '2023-10-15', 1),
+(25, 'Online', 'Finalizado', '2023-11-01', '2023-11-07', 1);
 
 -- Produtos Pedidos do cliente 1
 INSERT OR IGNORE INTO ProdutoPedido (produtoID, pedidoID, quantidade, precoVenda)
-VALUES 
-(3, 5, 2, 10000.00),  -- Total = 20.000
+VALUES
 (3, 6, 3, 12000.00),  -- Total = 36.000
 (3, 7, 4, 14000.00),  -- Total = 56.000
 (3, 8, 2, 10000.00),  -- Total = 20.000
