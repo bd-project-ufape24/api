@@ -17,7 +17,7 @@ VALUES
   (9941, '2025-12-31', 'disponível', 1500.00, 4000.00, 5, 4),
   (9942, '2025-12-31', 'disponível', 1500.00, 4000.00, 5, 6);
 
-INSERT INTO NomeProduto (produtoID, nome, idioma)
+INSERT OR IGNORE INTO NomeProduto (produtoID, nome, idioma)
 VALUES 
   (9939, 'Armário', 'pt-br'),
   (9940, 'Martelo do BOB', 'pt-br'),

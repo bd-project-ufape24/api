@@ -2,7 +2,7 @@ INSERT OR IGNORE INTO Categoria (ID, nome, descricao)
 VALUES 
 (3, 'Eletrodomésticos', 'Categoria de Eletrodomésticos');
 
-INSERT INTO Fornecedor (ID, nome, pais, estado, cidade, rua, numero, complemento, tipo, documento)
+INSERT OR IGNORE INTO Fornecedor (ID, nome, pais, estado, cidade, rua, numero, complemento, tipo, documento)
 VALUES 
   (3, 'Chris', 'Brasil', 'SP', 'São Paulo', 'Rua Principal', 10, 'Bloco 1', 'Fornecedor', '12345678900'),
   (4, 'Greg', 'Brasil', 'RJ', 'Rio de Janeiro', 'Avenida Secundária', 20, 'Sala 202', 'Fornecedor', '09876543211');
@@ -13,10 +13,10 @@ VALUES
   (901, '2026-05-15', 'disponivel', 3000.00, 2500.00, 3, 3),
   (902, '2026-10-10', 'disponivel', 2000.00, 1800.00, 4, 3);
 
-INSERT INTO Armazem (nome, pais, estado, cidade, rua, numero, complemento)
+INSERT OR IGNORE INTO Armazem (ID, nome, pais, estado, cidade, rua, numero, complemento)
 VALUES 
-  ('Armazém 1', 'Brasil', 'SP', 'São Paulo', 'Rua ABC', 100, 'Apto 101'),
-  ('Armazém 2', 'Brasil', 'RJ', 'Rio de Janeiro', 'Avenida XYZ', 200, 'Sala 202');
+  (3, 'Armazém 1', 'Brasil', 'SP', 'São Paulo', 'Rua ABC', 100, 'Apto 101'),
+  (4, 'Armazém 2', 'Brasil', 'RJ', 'Rio de Janeiro', 'Avenida XYZ', 200, 'Sala 202');
 
 
 WITH ProdutoIDs AS (

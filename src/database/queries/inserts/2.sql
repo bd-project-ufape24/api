@@ -1,6 +1,3 @@
--- Liste o nome, limite de crédito, cidade e estado dos clientes americanos que já realizaram mais de 20 pedidos 
--- com o valor total de cada pedido maior do que 10.000 e que nunca compraram produtos da categoria “Smartphone”.
-
 INSERT OR IGNORE INTO Categoria (ID, nome, descricao)
 VALUES 
 (2, 'Smartphone', 'Categoria de smartphones e dispositivos móveis');
