@@ -1,6 +1,9 @@
 SELECT 
-    SUM(e.qtdProduto) AS quantidade_produtos,
-    AVG(e.qtdProduto) AS media_produtos
+    a.nome AS nomeArmazem, 
+    e.codigo AS codigoEstoque, 
+    c.nome AS nomeCategoria,
+    SUM(e.qtdProduto) AS quantidadeProdutos,
+    AVG(e.qtdProduto) AS mediaProdutos
 FROM 
     Estoque e
 JOIN 

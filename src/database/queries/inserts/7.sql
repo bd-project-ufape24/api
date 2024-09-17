@@ -1,6 +1,7 @@
 -- Inserir Fornecedor
 INSERT OR IGNORE INTO Fornecedor (ID, nome, pais, estado, cidade, rua, numero, complemento, tipo, documento)
-VALUES (5, 'Tim Roth', 'Brasil', 'SP', 'São Paulo', 'Rua Exemplo', 123, 'Apto 101', 'Fornecedor', '123456789');
+VALUES 
+  (5, 'Tim Roth', 'Brasil', 'SP', 'São Paulo', 'Rua Exemplo', 123, 'Apto 101', 'Fornecedor', '123456789');
 
 INSERT OR IGNORE INTO Produto (ID, dataGarantia, status, precoVendaMin, precoTabela, fornecedorID, categoriaID)
 VALUES 
@@ -20,25 +21,25 @@ VALUES
 -- Inserir Armazéns
 INSERT OR IGNORE INTO Armazem (ID, nome, pais, estado, cidade, rua, numero, complemento)
 VALUES 
-  (5, 'Armazém 41', 'Brasil', 'SP', 'São Paulo', 'Rua A', 101, 'Bloco 1'),
-  (6, 'Armazém 42', 'Brasil', 'SP', 'São Paulo', 'Rua B', 102, 'Bloco 2'),
-  (7, 'Armazém 43', 'Brasil', 'SP', 'São Paulo', 'Rua C', 103, 'Bloco 3'),
-  (8, 'Armazém 44', 'Brasil', 'SP', 'São Paulo', 'Rua D', 104, 'Bloco 4'),
-  (9, 'Armazém 45', 'Brasil', 'SP', 'São Paulo', 'Rua E', 105, 'Bloco 5');
+  (5, 'Armazém 5', 'Brasil', 'SP', 'São Paulo', 'Rua A', 101, 'Bloco 1'),
+  (6, 'Armazém 6', 'Brasil', 'SP', 'São Paulo', 'Rua B', 102, 'Bloco 2'),
+  (7, 'Armazém 7', 'Brasil', 'SP', 'São Paulo', 'Rua C', 103, 'Bloco 3'),
+  (8, 'Armazém 8', 'Brasil', 'SP', 'São Paulo', 'Rua D', 104, 'Bloco 4'),
+  (9, 'Armazém 9', 'Brasil', 'SP', 'São Paulo', 'Rua E', 105, 'Bloco 5');
 
 -- Inserir Estoque
 INSERT OR IGNORE INTO Estoque (codigo, armazemID, produtoID, qtdProduto)
 VALUES 
-  ('ABC001', (SELECT ID FROM Armazem WHERE nome = 'Armazém 41'), 9937, 50),
-  ('ABC002', (SELECT ID FROM Armazem WHERE nome = 'Armazém 42'), 9937, 50),
-  ('ABC003', (SELECT ID FROM Armazem WHERE nome = 'Armazém 43'), 9937, 50),
-  ('ABC004', (SELECT ID FROM Armazem WHERE nome = 'Armazém 44'), 9937, 50),
-  ('ABC005', (SELECT ID FROM Armazem WHERE nome = 'Armazém 45'), 9937, 50),
-  ('XYZ001', (SELECT ID FROM Armazem WHERE nome = 'Armazém 41'), 9938, 60),
-  ('XYZ002', (SELECT ID FROM Armazem WHERE nome = 'Armazém 42'), 9938, 60),
-  ('XYZ003', (SELECT ID FROM Armazem WHERE nome = 'Armazém 43'), 9938, 60),
-  ('XYZ004', (SELECT ID FROM Armazem WHERE nome = 'Armazém 44'), 9938, 60),
-  ('XYZ005', (SELECT ID FROM Armazem WHERE nome = 'Armazém 45'), 9938, 60);
+  ('ABC001', 5, 9937, 50),
+  ('ABC002', 6, 9937, 50),
+  ('ABC003', 7, 9937, 50),
+  ('ABC004', 8, 9937, 50),
+  ('ABC005', 9, 9937, 50),
+  ('XYZ001', 5, 9938, 60),
+  ('XYZ002', 6, 9938, 60),
+  ('XYZ003', 7, 9938, 60),
+  ('XYZ004', 8, 9938, 60),
+  ('XYZ005', 9, 9938, 60);
 
 -- Inserir ProdutoPedido
 INSERT OR IGNORE INTO ProdutoPedido (pedidoID, produtoID, precoVenda, quantidade)
